@@ -1,4 +1,5 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
+const navMenu = document.getElementById('nav-menu')
 
 
 /*===== MENU SHOW =====*/
@@ -34,6 +35,7 @@
 
 
 /*==================== SHOW SCROLL UP ====================*/ 
+
 
 
 /*==================== DARK LIGHT THEME ====================*/ 
