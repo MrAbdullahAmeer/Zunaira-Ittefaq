@@ -938,3 +938,71 @@ padding: 1rem;
     opacity: 1;
     transform: translateX(0);
 }
+
+/* ===== SCROLL ANIMATION FIX ===== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== OPTIONAL: PARALLAX EFFECT FOR HERO/BACKGROUND ===== */
+.parallax {
+    transform: translateY(0);
+    transition: transform 0.6s ease-out;
+}
+
+/* ===== AUTO THEME FIX - COLORS UNTOUCHED ===== */
+:root {
+    /* Light Theme - Teal & Coral Modern */
+    --primary-color: #0f766e;        /* Deep Teal */
+    --secondary-color: #14b8a6;      /* Aqua Teal */
+    --accent-color: #ff6b6b;         /* Coral Red */
+    
+    --text-primary: #1e293b;         
+    --text-secondary: #475569;
+    
+    --bg-primary: #f8fafc;
+    --bg-secondary: #e2e8f0;
+    
+    --bg-gradient-start: #0f766e;
+    --bg-gradient-end: #134e4a;
+    
+    --card-bg: #ffffff;
+    
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-hover: rgba(15, 118, 110, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Theme - Charcoal & Mint Glow */
+        --primary-color: #2dd4bf;        /* Bright Mint */
+        --secondary-color: #14b8a6;      
+        --accent-color: #fb7185;         /* Soft Pink Coral */
+        
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        
+        --bg-primary: #0f172a;           /* Deep Navy */
+        --bg-secondary: #1e293b;
+        
+        --bg-gradient-start: #0f172a;
+        --bg-gradient-end: #134e4a;
+        
+        --card-bg: #1e293b;
+        
+        --shadow-color: rgba(0, 0, 0, 0.4);
+        --shadow-hover: rgba(45, 212, 191, 0.4);
+    }
+}
