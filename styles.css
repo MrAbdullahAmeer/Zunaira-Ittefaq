@@ -1,6 +1,11 @@
 
 /* ===== CSS VARIABLES ===== */ /* Define color schemes for light and dark themes using CSS variables */
 /* ===== NEW COLOR SCHEME ===== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
     /* Light Theme - Teal & Coral Modern */
@@ -118,7 +123,7 @@ background: rgba(26, 32, 44, 0.95);
 .nav-container {
 max-width: 1200px;
 margin: 0 auto;
-padding: 1rem 2rem;
+padding: 1rem 20rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -197,6 +202,11 @@ filter: blur(80px);
 opacity: 0.3;
 animation: float 15s infinite ease-in-out;
 }
+.particles {
+    overflow: hidden;
+    max-width: 100%;
+}
+
 
 .particles::before {
 background: var(--accent-color);
@@ -891,4 +901,40 @@ padding: 1rem;
 @keyframes blink {
     0%, 50%, 100% { opacity: 1; }
     25%, 75% { opacity: 0; }
+}
+/* ===== SCROLL REVEAL ANIMATION ===== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Different animation directions (optional) */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.9s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.9s ease;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
 }
