@@ -470,5 +470,28 @@ document.addEventListener("DOMContentLoaded", function () {
     type();
 });
 
+/* ===== SCROLL REVEAL ANIMATION ===== */
+const scrollElements = document.querySelectorAll('.scroll-reveal');
+
+const elementInView = (el, offset = 1.2) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / offset;
+};
+
+const displayScrollElement = (el) => {
+  el.classList.add('show');
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el)) {
+      displayScrollElement(el);
+    }
+  });
+};
+
+window.addEventListener('scroll', handleScrollAnimation);
+window.addEventListener('load', handleScrollAnimation);
 console.log('%c👋 Welcome to Zunaira Ittefaq\'s Portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
 console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #764ba2; font-size: 14px;');
+
